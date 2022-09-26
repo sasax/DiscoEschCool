@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Disco Esch Cool</title>
+    <script>
+
+        setInterval(() => {
+
+            var hex = '#';
+            var range = 'ABCDEF0123456789';
+            for (var i = 0; i < 6; i++) {
+                hex += range.charAt(Math.floor(Math.random() * range.length));
+            }
+            document.getElementById("body").style.backgroundColor = hex;
+        },10)
+
+        function openFullscreen() {
+            if (body.requestFullscreen) {
+                body.requestFullscreen();
+            } else if (body.webkitRequestFullscreen) { /* Safari */
+                body.webkitRequestFullscreen();
+            } else if (body.msRequestFullscreen) { /* IE11 */
+                body.msRequestFullscreen();
+            }
+        }
+
+    </script>
+</head>
+<body>
+<div id="body" style="min-width: 100vw; min-height: 100vh" onclick=openFullscreen()></div>
+</body>
+</html>
